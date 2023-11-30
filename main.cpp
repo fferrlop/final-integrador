@@ -16,6 +16,16 @@ using namespace std;
 
 ConsoleBox *consoleBox = new ConsoleBox;
 
+void strip_ansi_escape_sequences(string &text) {
+    size_t pos = 0;
+    while ((pos = text.find("\033[")) != string::npos) {
+        size_t end_pos = text.find('m', pos);
+        if (end_pos != string::npos) {
+            text.erase(pos, end_pos - pos + 1);
+        }
+    }
+}
+
     void load_script(const char* filename, bool show_script = false) {
         string script;
         FILE *file = nullptr;
