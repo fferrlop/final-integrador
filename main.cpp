@@ -34,6 +34,16 @@ ConsoleBox *consoleBox = new ConsoleBox;
                     bytes_read = fread(buf, 1, 4000, file);
                 }
 
+                fclose(file);
+                file = nullptr;
+
+                if (show_script) {
+                    cout << ColorConsole::fg_blue << ColorConsole::bg_white;
+                    cout << script << endl;
+                }
+                consoleBox->new_text();
+                consoleBox->set_text(script);
+            }
     }
 
 
