@@ -30,7 +30,7 @@ ConsoleBox *consoleBox = new ConsoleBox;
             size_t bytes_read = fread(buf, 1, 4000, file);
             while (bytes_read > 0) {
                 buf[bytes_read] = '\0';
-                script.append(buf);
+                script.append(buf, bytes_read);
                 bytes_read = fread(buf, 1, 4000, file);
             }
 
@@ -60,6 +60,7 @@ void load_script() {
     load_script(filename, true);
 }
 
+//Escribir C:\Users\Francisco\CLionProjects\integrador\Texto.txt
 int main() {
     load_script();
     return 0;
