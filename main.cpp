@@ -53,6 +53,13 @@ ConsoleBox *consoleBox = new ConsoleBox;
         }
     }
 
+void load_script() {
+    char filename[500];
+    printf("Archivo: ");
+    scanf("%499s", filename);
+    load_script(filename, true);
+}
+
 int main() {
     load_script();
     return 0;
