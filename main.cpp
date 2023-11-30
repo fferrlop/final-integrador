@@ -18,9 +18,9 @@ ConsoleBox *consoleBox = new ConsoleBox;
 
     void load_script(const char* filename, bool show_script = false) {
         string script;
-        FILE* file = nullptr;
+        FILE *file = nullptr;
 
-
+    }
 int main() {
     std::cout << "Hello, World!" << std::endl;
     return 0;
