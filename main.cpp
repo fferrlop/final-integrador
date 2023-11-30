@@ -14,6 +14,11 @@ using namespace std;
         void set_text(const string &text) { cout << text << endl; }
     };
 
+ConsoleBox *consoleBox = new ConsoleBox;
+
+    void load_script(const char* filename, bool show_script = false) {
+        string script;
+        FILE* file = nullptr;
 
 
 int main() {
