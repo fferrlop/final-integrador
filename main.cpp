@@ -20,7 +20,23 @@ ConsoleBox *consoleBox = new ConsoleBox;
         string script;
         FILE *file = nullptr;
 
+            try {
+                file = fopen(filename, "r");
+                if (!file) {
+                    throw runtime_error("No se pudo abrir el archivo.");
+                }
+
+                char buf[4001];
+                size_t bytes_read = fread(buf, 1, 4000, file);
+                while (bytes_read > 0) {
+                    buf[bytes_read] = '\0';
+                    script.append(buf);
+                    bytes_read = fread(buf, 1, 4000, file);
+                }
+
     }
+
+
 int main() {
     std::cout << "Hello, World!" << std::endl;
     return 0;
