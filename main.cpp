@@ -54,6 +54,6 @@ ConsoleBox *consoleBox = new ConsoleBox;
     }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    load_script();
     return 0;
 }
